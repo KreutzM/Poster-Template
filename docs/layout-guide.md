@@ -7,7 +7,7 @@
 - Drei gleich breite Spalten reduzieren Zeilenlängen und verbessern die Lesbarkeit.
 - Eine vollbreite Take-away-Zeile zwingt zu einer klaren Kernbotschaft.
 - Logos und Abbildungen sind optional: Die Vorlage kompiliert auch ohne Assets.
-- Kennzahlen, Tags, Abbildungsplatzhalter und Kontaktblock sind als Makros wiederverwendbar.
+- Kennzahlen, Tags, Abbildungsplatzhalter und Footer-Bar sind als Makros wiederverwendbar.
 - Standardisierte Build-, Preview- und Final-Checks erleichtern die Arbeit in Git, Overleaf und CI.
 
 ## Format
@@ -30,8 +30,27 @@
 - Vektorgrafiken bevorzugt als PDF/SVG-konvertiertes PDF.
 - Bildunterschriften erklären Bedeutung, nicht nur Inhalt.
 
+## Footer-Bar
+
+Die Vorlage enthält optional eine dunkle, vollbreite Footer-Bar. Sie bündelt Informationen, die schnell auffindbar sein sollen, ohne die fachlichen Inhaltsboxen zu überladen.
+
+Geeignete Inhalte:
+
+- QR-Code und Kurzlink,
+- Kontaktperson oder Projektkontakt,
+- Institution, Projekt oder Veranstaltung,
+- Förderhinweis, DOI, Lizenz oder Repository.
+
+Gestaltungsempfehlungen:
+
+- Footer-Bar sparsam nutzen und nicht mit Kleingedrucktem überladen.
+- QR-Code mindestens 30–35 mm groß setzen.
+- Kurze URL zusätzlich zum QR-Code angeben.
+- Helle Schrift auf dunklem Hintergrund ausreichend groß setzen.
+- Die Footer-Bar kann in `src/poster-config.tex` über `\PosterUseFooterBartrue` oder `\PosterUseFooterBarfalse` aktiviert oder deaktiviert werden.
+
 ## QR-Code
 
-- QR-Code groß genug drucken, typischerweise mindestens 25–30 mm Kantenlänge.
+- QR-Code groß genug drucken, typischerweise mindestens 25–30 mm Kantenlänge, in der Footer-Bar eher 30–35 mm.
 - Vor dem Druck mit mehreren Smartphones testen.
 - Zusätzlich kurze URL als Text angeben, falls der QR-Code nicht scannt.
