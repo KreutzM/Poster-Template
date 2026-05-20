@@ -18,10 +18,17 @@
 \newcommand{\PosterContactEmail}{kontakt@example.org}
 \newcommand{\PosterContactWeb}{https://example.org}
 
-% Optional logo and QR-code files. Put files into assets/ and replace the paths.
+% Header logos.
+% Default: THM on the left and ITI on the right.
+% Set \PosterUseBlizLogotrue to use the BLiZ logo on the right instead of ITI.
 % Missing files are rendered as clean placeholders so the template still builds.
-\newcommand{\PosterLogoLeft}{assets/logos/logo-left.pdf}
-\newcommand{\PosterLogoRight}{assets/logos/logo-right.pdf}
+\newcommand{\PosterLogoLeft}{assets/logos/logo_thm.pdf}
+\newcommand{\PosterLogoRightIti}{assets/logos/logo_iti.png}
+\newcommand{\PosterLogoRightBliz}{assets/logos/logo_bliz.pdf}
+\newif\ifPosterUseBlizLogo
+\PosterUseBlizLogofalse
+
+% Optional QR-code file. Put the file into assets/qr/ and replace the path.
 \newcommand{\PosterQrCode}{assets/qr/qr-code.png}
 
 % Design colors: adapt to institutional branding.
