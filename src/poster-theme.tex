@@ -150,27 +150,34 @@
   {\large\color{PosterFooterMuted}\raggedright #2\par}%
 }
 
+% The footer is drawn as a page overlay so it stays anchored to the bottom
+% margin independent of how much placeholder content is currently on the page.
 \newcommand{\PosterFooterBar}{%
-  \par\vspace{\PosterBlockGap}%
-  {\color{PosterAccent}\rule{\linewidth}{2.2pt}}\par\vspace{0pt}%
-  \begin{tcolorbox}[footerbar]
-    \begin{minipage}[c][\PosterFooterHeight][c]{0.14\linewidth}
-      \centering
-      \PosterQrGraphic
-    \end{minipage}%
-    \hfill
-    \begin{minipage}[c][\PosterFooterHeight][c]{0.25\linewidth}
-      \PosterFooterItem{\PosterFooterLeftTitle}{\PosterFooterLeftText}
-    \end{minipage}%
-    \hfill
-    \begin{minipage}[c][\PosterFooterHeight][c]{0.27\linewidth}
-      \PosterFooterItem{\PosterFooterMiddleTitle}{\PosterFooterMiddleText}
-    \end{minipage}%
-    \hfill
-    \begin{minipage}[c][\PosterFooterHeight][c]{0.25\linewidth}
-      \PosterFooterItem{\PosterFooterRightTitle}{\PosterFooterRightText}
-    \end{minipage}
-  \end{tcolorbox}%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south, inner sep=0pt] at ([yshift=\PosterOuterMargin]current page.south) {%
+      \begin{minipage}{\textwidth}
+        {\color{PosterAccent}\rule{\linewidth}{2.2pt}}\par\vspace{0pt}%
+        \begin{tcolorbox}[footerbar]
+          \begin{minipage}[c][\PosterFooterHeight][c]{0.14\linewidth}
+            \centering
+            \PosterQrGraphic
+          \end{minipage}%
+          \hfill
+          \begin{minipage}[c][\PosterFooterHeight][c]{0.25\linewidth}
+            \PosterFooterItem{\PosterFooterLeftTitle}{\PosterFooterLeftText}
+          \end{minipage}%
+          \hfill
+          \begin{minipage}[c][\PosterFooterHeight][c]{0.27\linewidth}
+            \PosterFooterItem{\PosterFooterMiddleTitle}{\PosterFooterMiddleText}
+          \end{minipage}%
+          \hfill
+          \begin{minipage}[c][\PosterFooterHeight][c]{0.25\linewidth}
+            \PosterFooterItem{\PosterFooterRightTitle}{\PosterFooterRightText}
+          \end{minipage}
+        \end{tcolorbox}%
+      \end{minipage}%
+    };
+  \end{tikzpicture}%
 }
 
 \newcommand{\PosterTag}[1]{%
