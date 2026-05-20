@@ -32,7 +32,7 @@
 
 ## Footer-Bar
 
-Die Vorlage enthält optional eine dunkle, vollbreite Footer-Bar. Sie bündelt Informationen, die schnell auffindbar sein sollen, ohne die fachlichen Inhaltsboxen zu überladen.
+Die Vorlage nutzt standardmäßig eine dunkle, vollbreite Footer-Bar. Sie bündelt Informationen, die schnell auffindbar sein sollen, ohne die fachlichen Inhaltsboxen zu überladen.
 
 Geeignete Inhalte:
 
@@ -47,7 +47,8 @@ Gestaltungsempfehlungen:
 - QR-Code mindestens 30–35 mm groß setzen.
 - Kurze URL zusätzlich zum QR-Code angeben.
 - Helle Schrift auf dunklem Hintergrund ausreichend groß setzen.
-- Die Footer-Bar kann in `src/poster-config.tex` über `\PosterUseFooterBartrue` oder `\PosterUseFooterBarfalse` aktiviert oder deaktiviert werden.
+- Die Footer-Bar ist in `src/poster-config.tex` mit `\PosterUseFooterBartrue` voreingestellt.
+- Nur bei Bedarf kann sie mit `\PosterUseFooterBarfalse` durch einen kompakten Text-Footer ersetzt werden.
 
 ## QR-Code
 
