@@ -1,4 +1,4 @@
-.PHONY: pdf check preview clean distclean check-tools check-structure final-check
+.PHONY: pdf check preview visual-check clean distclean check-tools check-structure final-check
 
 MAIN := main
 LATEXMK := latexmk
@@ -24,6 +24,11 @@ preview: pdf
 	@command -v pdftoppm >/dev/null 2>&1 || { echo "ERROR: pdftoppm not found. Install poppler-utils."; exit 1; }
 	mkdir -p build
 	pdftoppm -png -singlefile -r 120 build/$(MAIN).pdf build/poster-preview
+
+visual-check: preview
+	@echo "PNG preview written to build/poster-preview.png"
+	@echo "Suggested Codex command:"
+	@echo "codex -i build/poster-preview.png \"Review this DIN-A0 poster visually. Check hierarchy, whitespace, text density, column balance, figure size, print readability, and concrete LaTeX improvements.\""
 
 clean:
 	$(LATEXMK) -C $(MAIN).tex
