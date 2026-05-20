@@ -2,18 +2,18 @@
 
 ## Was gegenüber einer einfachen Overleaf-Vorlage verbessert wurde
 
-- Zentrale Konfiguration für Titel, Kontakt, Farben, Logos und Abstände in `src/poster-config.tex`.
+- Zentrale Konfiguration für Titel, Kontakt, Farben, Logos, Footer und Abstände in `src/poster-config.tex`.
 - Inhalt, Design und Build-Logik sind getrennt.
 - Drei gleich breite Spalten reduzieren Zeilenlängen und verbessern die Lesbarkeit.
 - Eine vollbreite Take-away-Zeile zwingt zu einer klaren Kernbotschaft.
-- Logos und Abbildungen sind optional: Die Vorlage kompiliert auch ohne Assets.
+- THM und ITI sind als institutionelle Header-Defaults vorkonfiguriert; BLiZ ist per Schalter auswählbar.
 - Kennzahlen, Tags, Abbildungsplatzhalter und Footer-Bar sind als Makros wiederverwendbar.
-- Standardisierte Build-, Preview- und Final-Checks erleichtern die Arbeit in Git, Overleaf und CI.
+- Standardisierte Build-, Preview-, Visual-Check- und Final-Checks erleichtern die Arbeit in Git, Overleaf und CI.
 
 ## Format
 
 - DIN A0 Hochformat: ca. 841 × 1189 mm.
-- Sichere Außenränder: mindestens 15–20 mm, besser 20–25 mm.
+- Sicherer Außenrand: standardmäßig 30 mm.
 - Für Druckdaten beim Anbieter prüfen: Beschnittzugabe, Farbprofil, Mindestauflösung und PDF/X-Anforderungen.
 
 ## Typografie
@@ -22,6 +22,21 @@
 - Blocktitel: kurz und eindeutig.
 - Fließtext: kurze Absätze; lieber Listen und Abbildungen.
 - Vermeide Blocksatz bei sehr schmalen Spalten, wenn unschöne Wortabstände entstehen. Die Vorlage nutzt `\justifying`, kann aber blockweise auf `\raggedright` geändert werden.
+
+## Header-Logos
+
+Die Vorlage nutzt standardmäßig:
+
+- links: `assets/logos/logo_thm.pdf`,
+- rechts: `assets/logos/logo_iti.png`.
+
+Für BLiZ-Poster kann in `src/poster-config.tex` rechts das BLiZ-Logo aktiviert werden:
+
+```tex
+\PosterUseBlizLogotrue
+```
+
+Die Logo-Makros behalten Platzhalter bei, falls Dateien fehlen. Für die produktive Nutzung sollten Logo-Dateien und Rechte aber geprüft sein.
 
 ## Abbildungen
 
