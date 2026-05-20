@@ -18,10 +18,11 @@
 \newcommand{\PosterContactEmail}{kontakt@example.org}
 \newcommand{\PosterContactWeb}{https://example.org}
 
-% Optional logo files. Put files into assets/logos/ and replace the paths.
+% Optional logo and QR-code files. Put files into assets/ and replace the paths.
 % Missing files are rendered as clean placeholders so the template still builds.
 \newcommand{\PosterLogoLeft}{assets/logos/logo-left.pdf}
 \newcommand{\PosterLogoRight}{assets/logos/logo-right.pdf}
+\newcommand{\PosterQrCode}{assets/qr/qr-code.png}
 
 % Design colors: adapt to institutional branding.
 \definecolor{PosterPrimary}{RGB}{0,100,120}
@@ -30,6 +31,9 @@
 \definecolor{PosterInk}{RGB}{30,38,44}
 \definecolor{PosterMuted}{RGB}{88,96,104}
 \definecolor{PosterBackground}{RGB}{255,255,255}
+\definecolor{PosterFooterBackground}{RGB}{21,55,66}
+\definecolor{PosterFooterText}{RGB}{255,255,255}
+\definecolor{PosterFooterMuted}{RGB}{220,232,235}
 
 % Layout constants. A0 portrait gives approx. 841 x 1189 mm.
 \newlength{\PosterOuterMargin}
@@ -38,3 +42,17 @@
 \setlength{\PosterBlockGap}{12mm}
 \newlength{\PosterBoxPadding}
 \setlength{\PosterBoxPadding}{8mm}
+\newlength{\PosterFooterHeight}
+\setlength{\PosterFooterHeight}{64mm}
+
+% Optional full-width footer bar. It is useful for QR code, contact, project,
+% funding, DOI, short URL, or license information. Disable it with
+% \PosterUseFooterBarfalse for a compact text-only footer.
+\newif\ifPosterUseFooterBar
+\PosterUseFooterBartrue
+\newcommand{\PosterFooterLeftTitle}{Material}
+\newcommand{\PosterFooterLeftText}{QR-Code, Kurzlink, Repository oder Zusatzmaterial}
+\newcommand{\PosterFooterMiddleTitle}{Kontakt}
+\newcommand{\PosterFooterMiddleText}{\PosterContactName\\\texttt{\PosterContactEmail}\\\href{\PosterContactWeb}{\PosterContactWeb}}
+\newcommand{\PosterFooterRightTitle}{Projekt / Hinweis}
+\newcommand{\PosterFooterRightText}{\PosterEvent\\Förderhinweis / DOI / Lizenz}
