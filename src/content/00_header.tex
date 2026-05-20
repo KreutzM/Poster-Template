@@ -1,4 +1,5 @@
-% Header: left logo, title block, right logo. Replace logos in poster-config.tex.
+% Header: THM logo left, title block center, ITI or BLiZ logo right.
+% Configure logo paths and the right-logo switch in src/poster-config.tex.
 \begin{tcolorbox}[
   enhanced,
   colback=white,
@@ -22,7 +23,12 @@
 \end{minipage}
 \hfill
 \begin{minipage}[c]{0.17\linewidth}
-  \raggedleft\PosterLogo[height=32mm]{\PosterLogoRight}
+  \raggedleft
+  \ifPosterUseBlizLogo
+    \PosterLogo[height=32mm]{\PosterLogoRightBliz}
+  \else
+    \PosterLogo[height=32mm]{\PosterLogoRightIti}
+  \fi
 \end{minipage}
 \PosterRule
 \end{tcolorbox}
