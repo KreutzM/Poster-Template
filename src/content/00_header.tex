@@ -1,0 +1,28 @@
+% Header: left logo, title block, right logo. Replace logos in poster-config.tex.
+\begin{tcolorbox}[
+  enhanced,
+  colback=white,
+  colframe=white,
+  boxrule=0pt,
+  left=0pt,right=0pt,top=0pt,bottom=0pt
+]
+\begin{minipage}[c]{0.17\linewidth}
+  \raggedright\PosterLogo[height=32mm]{\PosterLogoLeft}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.62\linewidth}
+  \centering
+  {\Huge\bfseries\color{PosterInk}\PosterTitle\par}
+  \vspace{4mm}
+  {\LARGE\color{PosterPrimary}\PosterSubtitle\par}
+  \vspace{3mm}
+  {\Large\PosterAuthors\par}
+  \vspace{1mm}
+  {\large\color{PosterMuted}\PosterAffiliations\par}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.17\linewidth}
+  \raggedleft\PosterLogo[height=32mm]{\PosterLogoRight}
+\end{minipage}
+\PosterRule
+\end{tcolorbox}
