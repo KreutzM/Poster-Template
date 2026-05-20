@@ -12,10 +12,21 @@ REQUIRED = [
     "src/preamble.tex",
     "src/poster-config.tex",
     "src/poster-theme.tex",
+    "src/content/00_header.tex",
+    "src/content/08_footer.tex",
     "README.md",
+    "AGENTS.md",
     "Makefile",
     "latexmkrc",
     "docs/layout-guide.md",
+    "docs/content-checklist.md",
+    "docs/accessibility.md",
+    "docs/asset-inventory.md",
+    "docs/codex-workflow.md",
+    "docs/image-assets.md",
+    "assets/logos/logo_thm.pdf",
+    "assets/logos/logo_iti.png",
+    "assets/logos/logo_bliz.pdf",
 ]
 FORBIDDEN_DIRS = ["build"]
 
