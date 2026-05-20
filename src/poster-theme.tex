@@ -54,6 +54,20 @@
     bottom=8mm,
     before skip=0pt,
     after skip=0pt
+  },
+  footerbar/.style={
+    enhanced,
+    colback=PosterFooterBackground,
+    colframe=PosterFooterBackground,
+    boxrule=0pt,
+    arc=0mm,
+    left=10mm,
+    right=10mm,
+    top=7mm,
+    bottom=7mm,
+    width=\linewidth,
+    before skip=0pt,
+    after skip=0pt
   }
 }
 
@@ -114,6 +128,49 @@
     }
     \node[align=center, color=PosterMuted, font=\small] at (15mm,-4mm) {QR-Platzhalter};
   \end{tikzpicture}%
+}
+
+\newcommand{\PosterFooterQrPlaceholder}{%
+  \begin{tikzpicture}[baseline=(current bounding box.center)]
+    \fill[white] (0,0) rectangle (34mm,34mm);
+    \draw[rounded corners=1mm, line width=0.8pt, color=PosterFooterText]
+      (0,0) rectangle (34mm,34mm);
+    \foreach \x/\y in {4/4,4/23,23/4,10/10,16/16,24/24,25/13,13/25}{
+      \fill[PosterFooterBackground] (\x mm,\y mm) rectangle +(4mm,4mm);
+    }
+  \end{tikzpicture}%
+}
+
+\newcommand{\PosterQrGraphic}[1][height=34mm]{%
+  \IfFileExists{\PosterQrCode}{\includegraphics[#1]{\PosterQrCode}}{\PosterFooterQrPlaceholder}%
+}
+
+\newcommand{\PosterFooterItem}[2]{%
+  {\Large\bfseries\color{PosterFooterText}#1}\par\vspace{1.5mm}%
+  {\large\color{PosterFooterMuted}\raggedright #2\par}%
+}
+
+\newcommand{\PosterFooterBar}{%
+  \par\vspace{\PosterBlockGap}%
+  {\color{PosterAccent}\rule{\linewidth}{2.2pt}}\par\vspace{0pt}%
+  \begin{tcolorbox}[footerbar]
+    \begin{minipage}[c][\PosterFooterHeight][c]{0.14\linewidth}
+      \centering
+      \PosterQrGraphic
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c][\PosterFooterHeight][c]{0.25\linewidth}
+      \PosterFooterItem{\PosterFooterLeftTitle}{\PosterFooterLeftText}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c][\PosterFooterHeight][c]{0.27\linewidth}
+      \PosterFooterItem{\PosterFooterMiddleTitle}{\PosterFooterMiddleText}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c][\PosterFooterHeight][c]{0.25\linewidth}
+      \PosterFooterItem{\PosterFooterRightTitle}{\PosterFooterRightText}
+    \end{minipage}
+  \end{tcolorbox}%
 }
 
 \newcommand{\PosterTag}[1]{%
