@@ -1,47 +1,57 @@
 # Bild-Assets und Image-Modelle
 
-Dieses Dokument beschreibt, wie neue Poster-Abbildungen sicher und reproduzierbar vorbereitet werden koennen.
+Dieses Dokument beschreibt, wie neue Poster-Abbildungen sicher und reproduzierbar vorbereitet werden können.
 
-## Geeignete Einsatzfaelle fuer generierte Bilder
+## Geeignete Einsatzfälle für generierte Bilder
 
-Generierte Bilder eignen sich gut fuer:
+Generierte Bilder eignen sich gut für:
 
 - Konzeptillustrationen,
 - Prozessgrafiken,
 - einfache Icons,
 - visuelle Metaphern,
-- Platzhalter fuer spaetere finale Grafiken,
-- nicht-datengetriebene Hintergrund- oder Erklaerbilder.
+- Platzhalter für spätere finale Grafiken,
+- nicht-datengetriebene Hintergrund- oder Erklärbilder.
 
-Nicht geeignet sind generierte Bilder als Ersatz fuer:
+Nicht geeignet sind generierte Bilder als Ersatz für:
 
 - echte Messergebnisse,
 - wissenschaftliche Datenplots,
-- Screenshots von Software, die exakt stimmen muessen,
-- Logos oder geschuetzte Marken ohne Rechteklaerung,
+- Screenshots von Software, die exakt stimmen müssen,
+- Logos oder geschützte Marken ohne Rechteklärung,
 - Abbildungen, die eine reale Person, ein reales Produkt oder eine reale Messung exakt wiedergeben sollen.
 
 ## Empfohlene Bildanforderungen
 
-Fuer DIN-A0-Poster sollten Abbildungen:
+Für DIN-A0-Poster sollten Abbildungen:
 
 - kontrastreich sein,
 - wenige Details enthalten,
-- auch aus 1--2 m Abstand verstaendlich bleiben,
-- moeglichst wenig eingebetteten Text enthalten,
+- auch aus 1–2 m Abstand verständlich bleiben,
+- möglichst wenig eingebetteten Text enthalten,
 - einen ruhigen Hintergrund haben,
 - als PNG, PDF oder SVG-zu-PDF eingebunden werden,
-- in finaler Druckgroesse ausreichend aufgeloest sein.
+- in finaler Druckgröße ausreichend aufgelöst sein.
 
-Fuer Rastergrafiken sind 150--300 dpi in finaler Druckgroesse ein sinnvoller Zielbereich. Fuer Diagramme und schematische Darstellungen sind Vektorformate vorzuziehen.
+Für Rastergrafiken sind 150–300 dpi in finaler Druckgröße ein sinnvoller Zielbereich. Für Diagramme und schematische Darstellungen sind Vektorformate vorzuziehen.
 
-## Beispielauftrag fuer ein Image-Model
+## Logos
+
+Die Vorlage enthält institutionelle Header-Defaults:
+
+- `assets/logos/logo_thm.pdf` links,
+- `assets/logos/logo_iti.png` rechts,
+- `assets/logos/logo_bliz.pdf` optional rechts.
+
+Logos sollten nicht durch Image-Modelle neu generiert oder verändert werden. Nutze freigegebene Originaldateien und dokumentiere die Nutzung in `docs/asset-inventory.md`.
+
+## Beispielauftrag für ein Image-Model
 
 ```text
-Erzeuge eine klare, wissenschaftlich wirkende Flat-Illustration fuer ein DIN-A0-Poster.
+Erzeuge eine klare, wissenschaftlich wirkende Flat-Illustration für ein DIN-A0-Poster.
 Thema: ...
 Motiv: ...
-Stil: minimal, modern, hoher Kontrast, helle Flaechen, keine kleinen Details.
+Stil: minimal, modern, hoher Kontrast, helle Flächen, keine kleinen Details.
 Wichtig: ohne Text, ohne Logos, ohne erfundene Zahlen, ohne realistische Personen.
 Format: breit, geeignet als zentrale Posterabbildung.
 ```
@@ -50,10 +60,10 @@ Format: breit, geeignet als zentrale Posterabbildung.
 
 Empfohlene Pfade:
 
-- `assets/figures/main-figure.png` fuer die Hauptabbildung,
-- `assets/figures/process-diagram.pdf` fuer Prozessgrafiken,
-- `assets/logos/` nur fuer freigegebene Logos,
-- `assets/qr/qr-code.png` fuer den QR-Code.
+- `assets/figures/main-figure.png` für die Hauptabbildung,
+- `assets/figures/process-diagram.pdf` für Prozessgrafiken,
+- `assets/logos/` nur für freigegebene Logos,
+- `assets/qr/qr-code.png` für den QR-Code.
 
 Jedes externe oder generierte Asset sollte in `docs/asset-inventory.md` dokumentiert werden.
 
@@ -64,15 +74,15 @@ Die Vorlage nutzt im Standardblock `src/content/05_figure.tex` die zentrale Haup
 Beispiel:
 
 ```tex
-\PosterGraphic{assets/figures/main-figure.png}{Kurze, aussagekraeftige Bildunterschrift.}{Hauptabbildung}
+\PosterGraphic{assets/figures/main-figure.png}{Kurze, aussagekräftige Bildunterschrift.}{Hauptabbildung}
 ```
 
-## Pruefung vor Abgabe
+## Prüfung vor Abgabe
 
-Vor Druck oder Veroeffentlichung pruefen:
+Vor Druck oder Veröffentlichung prüfen:
 
 - Ist die Abbildung aus der Distanz lesbar?
-- Ist sie fachlich korrekt und nicht irrefuehrend?
+- Ist sie fachlich korrekt und nicht irreführend?
 - Sind Rechte, Lizenz und Quelle dokumentiert?
 - Gibt es keine eingebetteten Tippfehler oder unlesbaren Kleinsttext?
-- Passt die Bildunterschrift zur tatsaechlichen Aussage der Abbildung?
+- Passt die Bildunterschrift zur tatsächlichen Aussage der Abbildung?
